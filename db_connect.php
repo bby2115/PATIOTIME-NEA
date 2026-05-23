@@ -1,11 +1,11 @@
 <?php
-$host = getenv("DB_HOST");
-$port = getenv("DB_PORT");
-$dbname = getenv("DB_NAME");
-$user = getenv("DB_USER");
-$password = getenv("DB_PASSWORD");
+$database_url = getenv("DATABASE_URL");
 
-$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password sslmode=require");
+if (!$database_url) {
+    die("DATABASE_URL nuk eshte vendosur ne Render.");
+}
+
+$conn = pg_connect($database_url);
 
 if (!$conn) {
     die("Lidhja me databazen deshtoi.");
