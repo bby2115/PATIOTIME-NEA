@@ -2,7 +2,7 @@
 $host = "aws-1-eu-central-1.pooler.supabase.com";
 $port = "5432";
 $dbname = "postgres";
-$user = "postgres.antfywtglchnaoxfmod";
+$user = "postgres.antfyiwtglchnaoxfmod";
 $password = getenv("DB_PASSWORD");
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password sslmode=require");
