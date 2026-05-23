@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our story - PatioTime</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Georgia, serif;
+    }
+
+    body {
+      position: relative;
+      background: url('https://www.sarahurban.com.au/cdn/shop/files/TableSetting-SarahUrban-0873.sRGB_120dpi_WEB_800x.jpg?v=1719180080') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+
+    .topbar, .navbar {
+      color: beige;
+    }
+
+    .topbar {
+      font-size: 13px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: beige;
+    }
+
+    .logo {
+      width: 85px;
+      flex-shrink: 0;
+      color: #ccc;
+    }
+
+    .logo img {
+      width: 100%;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      background-color: transparent;
+      color: beige;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+
+    .welcome-title {
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 1rem;
+      z-index: 1;
+    }
+
+    .welcome-title h2 {
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .welcome-title h1 {
+      font-family: "Times New Roman", serif;
+      font-size: 5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      font-weight: normal;
+    }
+
+    .story {
+      background-color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .story h3 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      color: #f45d01;
+      font-weight: bold;
+    }
+
+    .story h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: normal;
+      font-size: 37px;
+      text-align: center;
+      color: #000;
+    }
+
+    .food-philosophy {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 50px;
+      gap: 80px;
+      position: relative;
+      background-color: #fff;
+    }
+
+    .images {
+      position: relative;
+      width: 400px;
+      height: 500px;
+    }
+
+    .image-large {
+      position: absolute;
+      top: 0;
+      left: 100px;
+      width: 300px;
+      z-index: 2;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-small {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 250px;
+      z-index: 1;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-content {
+      max-width: 450px;
+    }
+
+    .text-content h4 {
+      color: #c95b00;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .text-content h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .text-content p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .learn-more {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #f45d01;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+    }
+
+    .learn-more:hover {
+      background-color: #c44700;
+    }
+
+    .visit-section {
+      padding: 80px 100px;
+      background-color: #fff;
+    }
+
+    .visit-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .text-column {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .image-column {
+      display: flex;
+      gap: 20px;
+    }
+
+    .image-column img {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #f45d01;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 300px);
+      gap: 0;
+      width: 100%;
+    }
+
+    .grid-item {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+      color: white;
+      align-items: flex-end;
+      display: flex;
+    }
+
+    .item1 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/klara-kulikova-gXmCinze3k8-unsplash-550x825.jpg);
+    }
+
+    .item2 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/ig-8.jpg);
+    }
+
+    .item3 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/cta-bg-5-550x550.jpg);
+    }
+
+    .item4 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/cta-bg-4-550x550.jpg);
+    }
+
+    .item5 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/klara-kulikova-9Y6S-ehZpOM-unsplash-550x825.jpg);
+    }
+
+    .item6 {
+      background-image: url(https://patiotime.loftocean.com/wp-content/uploads/2022/03/cta-bg-3-550x550.jpg);
+    }
+
+    .testimonials {
+      background-color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .testimonials h3 {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      color: #f45d01;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .hero {
+      background: url('https://patiotime.loftocean.com/wp-content/uploads/2022/03/alaksiej-carankievic-JBDYs80RTcs-unsplash.jpg') no-repeat center center/cover;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      color: orange;
+      letter-spacing: 1px;
+      font-size: larger;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 54px;
+      margin: 20px 0;
+      color: white;
+    }
+
+    .reservation-form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .reservation-form select,
+    .reservation-form input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: black;
+      color: white;
+    }
+
+    .reservation-form input::placeholder {
+      color: #ccc;
+    }
+
+    .reservation-form button {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .powered {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    footer {
+      background-color: #111;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      width: 100%;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1 1 250px;
+      color: rgb(194, 189, 189);
+    }
+
+    .column h2,
+    .column h3 {
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+      color: white;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      margin-top: 10px;
+      width: calc(100% - 40px);
+      box-sizing: border-box;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .newsletter button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 5px;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .privacy {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .privacy input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .privacy a {
+      color: orange;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>📍 Silk St, Barbican, London EC2Y 8DS, UK</span>
+    <span>📞 +39-055-123456</span>
+    <span>✉️ booking@patiotime.com</span>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/04/pt-logo.svg" alt="PatioTime Logo">
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="struktura.html">Home</a></li>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button class="btn-outline">Find a table</button>
+  </nav>
+
+  <div class="welcome-title">
+    <h2>⸻ THE STORY BEHIND ⸻</h2>
+    <h1>OUR STORY</h1>
+  </div>
+
+  <div class="story">
+    <h3>THE SECRET OF OUR SUCCESS</h3>
+    <h2>
+      A distinctive, well-preserved and comfortable space, 
+      <br>high-quality products, authentic cuisine, food and drinks
+      <br>are done flawlessly.
+    </h2>
+  </div>
+
+  <section class="food-philosophy">
+    <div class="images">
+      <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/03/klara-kulikova-gXmCinze3k8-unsplash-370x555.jpg" class="image-small" alt="Dining table">
+      <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/03/chef-1-550x687.jpg" class="image-large" alt="Chef preparing food">
+    </div>
+
+    <div class="text-content">
+      <div style="display: flex; align-items: center;">
+        <h3 style="margin-right: 15px; color: #f45d01;">QUALITY & BALANCE</h3>
+        <hr style="border: 0; border-top: 2px solid #f45d01; width: 1.8cm; margin: 0;">
+      </div>
+
+      <h2 style="font-family: 'Times New Roman', serif; font-size: 50px; color: black; margin: 0; font-weight: normal;">
+        OUR FOOD PHILOSOPHY
+      </h2>
+
+      <p>
+        Simple and balanced. Alexander Petillo brings together flavors and specialties from Italy and beyond to create his own culinary world, full of surprising artistry.
+      </p>
+
+      <a href="#" class="learn-more">LEARN MORE</a>
+    </div>
+  </section>
+
+  <section class="visit-section">
+    <div class="visit-container" style="display: flex; justify-content: flex-end;">
+
+      <div class="text-column" style="text-align: right;">
+        <div style="display: flex; align-items: center; justify-content: flex-end;">
+          <h3 style="margin-right: 20px; color: #f45d01;">RIGHT HERE WAITING</h3>
+          <hr style="border: 0; border-top: 2px solid #f45d01; width: 1.8cm; margin: 0;">
+        </div>
+
+        <h2 class="title" style="font-family: 'Times New Roman', serif; font-size: 50px; color: black; margin: 0; font-weight: normal;">
+          VISIT OUR RESTAURANT
+        </h2>
+
+        <p class="description">
+          We see our customers as invited guests to a party, and we are the hosts. <br>
+          Piazza della Signoria, 1050122 <br>
+          Firenze, Italy<br>
+          M: <a href="mailto:booking@patiotime.com">booking@patiotime.com</a><br>
+          T: +39 055 1234567
+        </p>
+
+        <a href="#" class="btn">GET DIRECTIONS</a>
+      </div>
+
+      <div class="image-column">
+        <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/03/klara-kulikova-f3ICj3QJkQA-unsplash-370x555.jpg" height="500" width="500" alt="Restaurant image">
+        <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/03/img-8-2-370x500.jpg" height="450" width="455" alt="Restaurant interior">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="grid-container">
+    <div class="grid-item item1"></div>
+    <div class="grid-item item2"></div>
+    <div class="grid-item item3"></div>
+    <div class="grid-item item4"></div>
+    <div class="grid-item item5"></div>
+    <div class="grid-item item6"></div>
+  </section>
+
+  <div class="testimonials">
+    <h3>⸻ TESTIMONIALS ⸻</h3>
+
+    <h1 style="font-family: 'Times New Roman', Times; font-weight: lighter; color: #000; font-size: 45px; text-align: center;">
+      WHAT PEOPLE ARE SAYING
+    </h1>
+
+    <br><br>
+
+    <h1 style="font-family: 'Times New Roman', Times; font-weight: lighter; color:#c44700; font-size: 45px; text-align: center;">
+      "
+    </h1>
+
+    <h4 style="text-align: center; font-weight: lighter;">
+      The website impresses with its clean and sophisticated design.
+      <br>Its layout is both functional and aesthetically pleasing,
+      <br>guiding visitors seamlessly through the content.
+      <br>The visuals effectively capture the essence of the brand,
+      <br>creating an engaging and immersive experience.
+      <br>Navigation is intuitive, ensuring that users find
+      <br>what they need effortlessly, while the overall presentation
+      <br>reflects professionalism and attention to detail.
+    </h4>
+
+    <br>
+
+    <img src="https://patiotime.loftocean.com/wp-content/uploads/2022/03/coffee-3.jpg" style="border-radius: 50%;" alt="Testimonial person">
+
+    <h4 style="text-align: center; font-weight: bold;">Melina LLeshi</h4>
+    <h4 style="text-align: center; font-weight: lighter;">Doctor</h4>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <p class="tagline">────────ONLINE RESERVATION────────</p>
+      <h1>BOOK A TABLE</h1>
+
+   <form class="reservation-form" action="submit_rezervim.php" method="POST">
+  <input type="text" name="name" placeholder="Emri" required>
+
+  <input type="text" name="surname" placeholder="Mbiemri" required>
+
+  <input type="text" name="tel" placeholder="Telefon" required>
+
+  <input type="email" name="email" placeholder="Email" required>
+
+  <select name="persona" required>
+  <option value="1">1 Person</option>
+  <option value="2">2 People</option>
+  <option value="3">3 People</option>
+  <option value="4">4 People</option>
+  <option value="5">5 People</option>
+  <option value="6">6 People</option>
+  <option value="7">7 People</option>
+  <option value="8">8 People</option>
+  <option value="9">9 People</option>
+  <option value="10">10 People</option>
+</select>
+
+  <input type="date" name="data" required>
+
+  <select name="ora" required>
+    <option value="9:00 am">9:00 am</option>
+    <option value="10:30 am">10:30 am</option>
+    <option value="11:00 am">11:00 am</option>
+    <option value="12:30 pm">12:30 pm</option>
+    <option value="13:00 pm">13:00 pm</option>
+  </select>
+
+  <button type="submit">BOOK NOW</button>
+</form>
+
+      <p class="powered">*Powered by OpenTable</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+
+      <div class="column">
+        <h2>Patio.Time</h2>
+        <p>
+          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+        </p>
+
+        <div class="social-icons">
+          <a href="#">📱 Instagram |</a>
+          <a href="#">Facebook |</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+
+      <div class="column">
+        <h3>WORKING HOURS</h3>
+        <p>Monday - Friday<br>09:00 - 22:00</p>
+        <p>Saturday<br>11:00 - 00:00</p>
+        <p>Sunday<br>11:00 - 23:00</p>
+        <p>* Happy hour<br>17:00 - 21:00</p>
+      </div>
+
+      <div class="column">
+        <h3>OUR ADDRESS</h3>
+        <p>📍 Silk St, Barbican, London EC2Y 8DS, UK</p>
+        <p>📞 +39-055-123456</p>
+        <p>✉️ booking@patiotime.com</p>
+      </div>
+
+      <div class="column newsletter">
+        <h3>NEWSLETTER</h3>
+        <p>Receive the latest news from us.</p>
+
+        <input type="email" placeholder="Your Email Address">
+        <button>→</button>
+
+        <div class="privacy">
+          <input type="checkbox" checked>
+          <label>I agree to the <a href="#">Privacy Policy</a></label>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
