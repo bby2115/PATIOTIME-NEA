@@ -1,21 +1,11 @@
 <?php
-$database_url = getenv("DATABASE_URL");
+$host = "aws-1-eu-central-1.pooler.supabase.com";
+$port = "5432";
+$dbname = "postgres";
+$user = "postgres.antfywtglchnaoxfmod";
+$password = getenv("DB_PASSWORD");
 
-if (!$database_url) {
-    die("DATABASE_URL nuk eshte vendosur ne Render.");
-}
-
-$db = parse_url($database_url);
-
-$host = $db["host"];
-$port = $db["port"];
-$user = $db["user"];
-$password = $db["pass"];
-$dbname = ltrim($db["path"], "/");
-
-$conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password sslmode=require";
-
-$conn = pg_connect($conn_string);
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password sslmode=require");
 
 if (!$conn) {
     die("Lidhja me databazen deshtoi.");
